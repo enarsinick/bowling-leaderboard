@@ -3,9 +3,11 @@ import logo from "../img/logo.svg";
 
 const Nav = () => {
     return (
-        <nav>
-            <img src={logo} alt="logo" />
-            <button>Add scores</button>
+        <nav className="nav">
+            <div className="nav-inner">
+                <img className="logo" src={logo} alt="logo" />
+                <button className="btn">Add scores</button>
+            </div>
         </nav>
     );
 };

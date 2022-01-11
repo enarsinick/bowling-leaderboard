@@ -1,0 +1,16 @@
+.nav {
+    background-color: $bg-darker;
+    border-bottom: 2px solid $outline;
+
+    &-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px $mobile-padding;
+    }
+
+    .logo {
+        max-width: 115px;
+    }
+}
