@@ -1,3 +1,7 @@
 main {
-    padding: 50px $mobile-padding;
+    margin: 50px $mobile-padding;
+    min-height: calc(
+        100vh - (98px + 64px + 100px)
+    ); // Nav, footer, and margin height
+    max-width: 1080px;
 }

@@ -10,7 +10,12 @@
         padding: 25px $mobile-padding;
     }
 
-    .logo {
-        max-width: 115px;
+    a {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            width: 115px;
+        }
     }
 }

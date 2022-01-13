@@ -4,7 +4,7 @@ const Footer = () => {
             <p>Copyright 2022 Nick Cave</p>
             <div className="divider-circle"></div>
             <p>
-                <a href="https://nickcave.co" target="_blank">
+                <a href="https://nickcave.co" target="_blank" rel="noreferrer">
                     Built by Nick
                 </a>
             </p>
