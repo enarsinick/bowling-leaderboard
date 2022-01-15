@@ -19,7 +19,14 @@
         align-items: center;
 
         .logo {
-            width: 115px;
+            width: 100px;
+
+            @include mq($desktop-bp) {
+                transition: 0.5s opacity ease;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
     }
 }

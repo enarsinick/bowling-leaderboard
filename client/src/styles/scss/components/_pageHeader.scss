@@ -19,5 +19,9 @@
         @include mq($tablet-bp) {
             font-size: 2rem;
         }
+
+        @include mq($desktop-bp) {
+            font-size: 2.5rem;
+        }
     }
 }

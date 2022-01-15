@@ -9,4 +9,13 @@
     font-size: 0.875rem;
     font-family: $main-font;
     font-weight: 500;
+    transition: 0.5s background-color ease;
+
+    @include mq($desktop-bp) {
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($primary, 6);
+        }
+    }
 }

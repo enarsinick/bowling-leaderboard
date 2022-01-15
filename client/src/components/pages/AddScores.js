@@ -8,8 +8,8 @@ const AddScores = () => {
                 <fieldset>
                     <label>Player Name</label>
                     <div className="select-wrapper">
-                        <select>
-                            <option selected disabled hidden>
+                        <select defaultValue={"DEFAULT"}>
+                            <option value="DEFAULT" disabled hidden>
                                 Select a player
                             </option>
                             <option>Nick Cave</option>
@@ -22,8 +22,8 @@ const AddScores = () => {
                 <fieldset>
                     <label>Did they win?</label>
                     <div className="select-wrapper">
-                        <select>
-                            <option selected disabled hidden>
+                        <select defaultValue={"DEFAULT"}>
+                            <option value="DEFAULT" disabled hidden>
                                 Select an answer
                             </option>
                             <option>Yes</option>

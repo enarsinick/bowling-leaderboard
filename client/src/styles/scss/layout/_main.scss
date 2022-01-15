@@ -10,7 +10,10 @@ main {
     }
 
     @include mq($desktop-bp) {
-        margin: 50px auto;
+        margin: 80px auto;
         padding: 0 32px;
+        min-height: calc(
+            100vh - (98px + 64px + 160px)
+        ); // Nav, footer, and margin height
     }
 }

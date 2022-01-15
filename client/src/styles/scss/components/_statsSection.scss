@@ -9,6 +9,10 @@
         margin-top: 50px;
     }
 
+    @include mq($desktop-bp) {
+        gap: 16px;
+    }
+
     &-eyebrow {
         display: none;
 
@@ -17,11 +21,19 @@
             grid-template-columns: 40% 60%;
             padding: 0 25px 0 20px;
 
+            @include mq($desktop-bp) {
+                padding: 0 32px 0 30px;
+            }
+
             p {
                 color: $eyebrow;
                 font-family: $main-font;
                 font-weight: 700;
                 font-size: 0.75rem;
+
+                @include mq($desktop-bp) {
+                    font-size: 0.85rem;
+                }
             }
 
             &-info {
@@ -30,6 +42,10 @@
 
                 p:last-of-type {
                     margin-left: 32px;
+
+                    @include mq($desktop-bp) {
+                        margin-left: 50px;
+                    }
                 }
             }
 
@@ -49,6 +65,10 @@
                 }
             }
         }
+
+        @include mq($desktop-bp) {
+            margin-bottom: 8px;
+        }
     }
 
     &-panel {
@@ -67,6 +87,11 @@
                 position: absolute;
                 top: 20px;
                 left: -1px;
+
+                @include mq($tablet-bp) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
             }
         }
 
@@ -120,6 +145,15 @@
             padding: 20px 25px;
         }
 
+        @include mq($desktop-bp) {
+            padding: 25px 33px;
+            transition: 0.5s background-color ease;
+
+            &:hover {
+                background-color: lighten($bg-lighter, 2);
+            }
+        }
+
         &-main {
             display: flex;
             align-items: center;
@@ -136,6 +170,11 @@
                 p {
                     font-weight: 800;
                 }
+
+                @include mq($desktop-bp) {
+                    height: 36px;
+                    width: 36px;
+                }
             }
 
             &-img {
@@ -151,6 +190,10 @@
                 @include mq($tablet-bp) {
                     margin: 0 20px;
                 }
+
+                @include mq($desktop-bp) {
+                    margin: 0 20px 0 40px;
+                }
             }
 
             &-name {
@@ -162,6 +205,11 @@
 
                 @include mq($tablet-bp) {
                     font-size: 1rem;
+                }
+
+                @include mq($desktop-bp) {
+                    font-size: 1.125rem;
+                    max-width: initial;
                 }
             }
 
@@ -222,6 +270,10 @@
                     @include mq($tablet-bp) {
                         font-size: 1rem;
                         text-align: center;
+                    }
+
+                    @include mq($desktop-bp) {
+                        font-size: 1.125rem;
                     }
                 }
             }
