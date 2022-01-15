@@ -1,0 +1,19 @@
+main {
+    margin: 50px $mobile-padding;
+    min-height: calc(
+        100vh - (98px + 64px + 100px)
+    ); // Nav, footer, and margin height
+    max-width: 1080px;
+
+    @include mq($tablet-bp) {
+        margin: 50px $tablet-padding;
+    }
+
+    @include mq($desktop-bp) {
+        margin: 80px auto;
+        padding: 0 32px;
+        min-height: calc(
+            100vh - (98px + 64px + 160px)
+        ); // Nav, footer, and margin height
+    }
+}

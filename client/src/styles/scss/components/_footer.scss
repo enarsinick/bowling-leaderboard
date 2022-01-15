@@ -1,0 +1,27 @@
+footer {
+    background-color: $bg-darker;
+    border-top: 2px solid $outline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+
+    p {
+        font-size: 0.75rem;
+        color: $eyebrow;
+        font-weight: 600;
+
+        a {
+            color: $eyebrow;
+        }
+    }
+
+    .divider-circle {
+        // text-decoration: none;
+        background-color: $eyebrow;
+        height: 5px;
+        width: 5px;
+        border-radius: 100%;
+        margin: 0 15px;
+    }
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// Imports
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles/css/index.min.css";
+import Nav from "./components/Nav";
+import LeaderboardPage from "./components/pages/LeaderboardPage";
+import Footer from "./components/Footer";
+import Login from "./components/pages/Login";
+import AddScores from "./components/pages/AddScores";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Nav />
+                <Routes>
+                    <Route index element={<LeaderboardPage />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/add-scores" element={<AddScores />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </div>
+    );
+};
 
 export default App;
