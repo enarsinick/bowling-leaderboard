@@ -4,7 +4,7 @@ const Login = () => {
     return (
         <main>
             <PageHeader eyebrow="Login" title="Login to add scores" />
-            <form className="login-form">
+            <form className="form">
                 <fieldset>
                     <label>Username</label>
                     <input

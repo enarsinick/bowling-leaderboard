@@ -8,9 +8,14 @@ $eyebrow: #545455;
 $firstPlace: #edcf7c;
 $secondPlace: #c6c5c7;
 $thirdPlace: #cf9b80;
+$fieldColour: rgba(255, 255, 255, 0.55);
 
 // ------- Padding & Margins --------
 $mobile-padding: 20px;
+$tablet-padding: 32px;
 
 // ------- Fonts --------
 $main-font: "Be Vietnam Pro", sans-serif;
+
+// ------- Breakpoints --------
+$tablet-bp: 768px;
