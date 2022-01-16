@@ -16,9 +16,18 @@ app.use(express.json());
 app.use(cors());
 
 // --------- Database Connection --------- //
+mongoose.connect(
+    `mongodb://localhost:27017/strike`,
+    { useNewUrlParser: true },
+    (error) => {
+        error
+            ? console.log("Can't connect to DB")
+            : console.log("Database connected!...");
+    }
+);
 
 // --------- Routes --------- //
-app.use("/scores", scoresRoute);
+app.use("/api", scoresRoute);
 
 // --------- Error Handling Middleware --------- //
 app.use((err, req, res, next) => {
