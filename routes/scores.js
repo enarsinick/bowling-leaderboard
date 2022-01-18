@@ -4,7 +4,7 @@ const router = require("express").Router();
 const { Player } = require("../models/player.js");
 
 // Get all scores for homepage
-router.get("/all", (req, res, next) => {
+router.get("/getAll", (req, res, next) => {
     // res.status(200).send("This is the get all route").end();
     Player.find((err, players) => {
         if (err) {

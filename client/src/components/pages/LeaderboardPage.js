@@ -11,7 +11,7 @@ const LeaderboardPage = () => {
 
     const handleRequest = () => {
         axios
-            .get("http://localhost:5015/scores/all")
+            .get("http://localhost:5015/api/getAll")
             .then((res) => {
                 setScores(res.data);
                 setLoaded(true);
@@ -37,11 +37,9 @@ const LeaderboardPage = () => {
             <PageHeader eyebrow="Leaderboard" title="Stroud Bowling League" />
             <div className="stats">
                 <StatsEyebrow />
-                <StatsPanel />
-                <StatsPanel />
-                <StatsPanel />
-                <StatsPanel />
-                <StatsPanel />
+                {scores.map((scores, i) => {
+                    return <StatsPanel key={i} data={scores} />;
+                })}
             </div>
         </main>
     );
