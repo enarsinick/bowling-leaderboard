@@ -1,4 +1,4 @@
-const StatsPanel = () => {
+const StatsPanel = ({ data }) => {
     return (
         <div className="stats-panel">
             <span className="vertical-line"></span>
@@ -7,13 +7,13 @@ const StatsPanel = () => {
                     <p>1</p>
                 </div>
                 <div className="stats-panel-main-img"></div>
-                <p className="stats-panel-main-name">Nicholas Cave</p>
+                <p className="stats-panel-main-name">{data.playerName}</p>
                 <p className="stats-panel-main-wins">25 wins</p>
             </div>
             <div className="stats-panel-content">
                 <div className="stats-panel-content-col">
                     <p>Played</p>
-                    <p>25</p>
+                    <p>{data.scores.length}</p>
                 </div>
                 <div className="stats-panel-content-col">
                     <p>Won</p>
