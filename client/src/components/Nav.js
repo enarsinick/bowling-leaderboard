@@ -10,7 +10,7 @@ const Nav = () => {
                     <img className="logo" src={logo} alt="logo" />
                 </Link>
                 <Link to="/add-scores">
-                    <button className="btn">Add scores</button>
+                    <p>Login/Sign Up</p>
                 </Link>
             </div>
         </nav>

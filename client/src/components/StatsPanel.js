@@ -15,9 +15,10 @@ const StatsPanel = ({ position, data }) => {
                 wins++;
             }
         });
-        wins > 1 || wins === 0
-            ? setWins(`${wins} wins`)
-            : setWins(`${wins} win`);
+        setWins(wins);
+        // wins > 1 || wins === 0
+        //     ? setWins(`${wins} wins`)
+        //     : setWins(`${wins} win`);
     };
 
     const calcTopScore = () => {
@@ -74,7 +75,7 @@ const StatsPanel = ({ position, data }) => {
                 </div>
                 <div className="stats-panel-main-img"></div>
                 <p className="stats-panel-main-name">{data.playerName}</p>
-                <p className="stats-panel-main-wins">{wins}</p>
+                <p className="stats-panel-main-wins">{wins} wins</p>
             </div>
             <div className="stats-panel-content">
                 <div className="stats-panel-content-col">
