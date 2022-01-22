@@ -25,3 +25,35 @@
         }
     }
 }
+
+.homepage-header {
+    text-align: center;
+    font-family: $main-font;
+
+    @include mq($tablet-bp) {
+        text-align: left;
+    }
+
+    h6 {
+        color: $eyebrow;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        color: white;
+        font-weight: 800;
+        font-size: 1.5625rem;
+
+        @include mq($tablet-bp) {
+            font-size: 2rem;
+        }
+
+        @include mq($desktop-bp) {
+            font-size: 2.5rem;
+        }
+    }
+}
