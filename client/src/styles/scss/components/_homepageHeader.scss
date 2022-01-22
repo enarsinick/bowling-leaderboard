@@ -1,0 +1,49 @@
+.homepage-header-wrapper {
+    border-bottom: 2px solid $outline;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include mq($tablet-bp) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .homepage-button-wrapper {
+        display: flex;
+        align-items: flex-end;
+        margin-top: 20px;
+
+        .homepage-button {
+            margin: 0 10px;
+            height: 45px;
+            width: 45px;
+            background-color: #1e2128;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include mq($tablet-bp) {
+                margin: 0 0 0 15px;
+            }
+
+            @include mq($desktop-bp) {
+                height: 50px;
+                width: 50px;
+                cursor: pointer;
+                transition: 0.4s background-color ease;
+
+                &:hover {
+                    background-color: lighten(#1e2128, 10);
+                }
+            }
+
+            svg {
+                width: 16px;
+            }
+        }
+    }
+}

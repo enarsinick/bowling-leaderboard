@@ -9,7 +9,7 @@ const Nav = () => {
                 <Link to="/">
                     <img className="logo" src={logo} alt="logo" />
                 </Link>
-                <Link to="/add-scores">
+                <Link to="/login">
                     <p>Login/Sign Up</p>
                 </Link>
             </div>
