@@ -24,21 +24,15 @@ const LeaderboardPage = () => {
 
     useEffect(handleRequest, []);
 
-    useEffect(() => {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(scores);
-        }
-    }, [loaded]);
-
     return (
         <main>
             <PageHeader eyebrow="Leaderboard" title="Stroud Bowling League" />
             <div className="stats">
                 <StatsEyebrow />
                 {scores.map((scores, i) => {
-                    return <StatsPanel key={i} data={scores} />;
+                    return (
+                        <StatsPanel key={i} position={i + 1} data={scores} />
+                    );
                 })}
             </div>
         </main>

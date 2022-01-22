@@ -100,6 +100,14 @@
         }
 
         &:nth-child(2) {
+            background-color: rgba($firstPlace, 0.12);
+
+            @include mq($desktop-bp) {
+                &:hover {
+                    background-color: rgba($firstPlace, 0.2) !important;
+                }
+            }
+
             .vertical-line {
                 background-color: $firstPlace;
             }
@@ -113,6 +121,14 @@
             }
         }
         &:nth-child(3) {
+            background-color: rgba($secondPlace, 0.15);
+
+            @include mq($desktop-bp) {
+                &:hover {
+                    background-color: rgba($secondPlace, 0.22) !important;
+                }
+            }
+
             .vertical-line {
                 background-color: $secondPlace;
             }
@@ -126,6 +142,14 @@
             }
         }
         &:nth-child(4) {
+            background-color: rgba($thirdPlace, 0.12);
+
+            @include mq($desktop-bp) {
+                &:hover {
+                    background-color: rgba($thirdPlace, 0.22) !important;
+                }
+            }
+
             .vertical-line {
                 background-color: $thirdPlace;
             }
@@ -148,9 +172,10 @@
         @include mq($desktop-bp) {
             padding: 25px 33px;
             transition: 0.5s background-color ease;
+            cursor: pointer;
 
             &:hover {
-                background-color: lighten($bg-lighter, 2);
+                background-color: lighten($bg-lighter, 4);
             }
         }
 
