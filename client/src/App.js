@@ -6,6 +6,7 @@ import LeaderboardPage from "./components/pages/LeaderboardPage";
 import Footer from "./components/Footer";
 import Login from "./components/pages/Login";
 import AddScores from "./components/pages/AddScores";
+import PlayerCreation from "./components/pages/PlayerCreation";
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
                     <Route index element={<LeaderboardPage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/add-scores" element={<AddScores />} />
+                    <Route path="/add-player" element={<PlayerCreation />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
