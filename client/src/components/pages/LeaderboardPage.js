@@ -40,9 +40,11 @@ const LeaderboardPage = () => {
                             <PlusIcon />
                         </div>
                     </Link>
-                    <div className="homepage-button">
-                        <PersonIcon />
-                    </div>
+                    <Link to="/add-player">
+                        <div className="homepage-button">
+                            <PersonIcon />
+                        </div>
+                    </Link>
                 </div>
             </div>
 
