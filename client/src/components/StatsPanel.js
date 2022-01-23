@@ -26,7 +26,9 @@ const StatsPanel = ({ position, data }) => {
         data.scores.forEach((item) => {
             top.push(item.total);
         });
-        setTopScore(Math.max.apply(Math, top));
+        top.length === 0
+            ? setTopScore(0)
+            : setTopScore(Math.max.apply(Math, top));
     };
 
     const calcTotal = () => {
@@ -63,7 +65,7 @@ const StatsPanel = ({ position, data }) => {
     }, []);
 
     useEffect(() => {
-        setAverage(total / data.scores.length);
+        total === 0 ? setAverage(0) : setAverage(total / data.scores.length);
     }, [total]);
 
     return (
