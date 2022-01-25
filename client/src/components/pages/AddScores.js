@@ -10,7 +10,7 @@ const AddScores = () => {
 
     const handleRequest = () => {
         axios
-            .get("http://localhost:5015/scores/1")
+            .get("http://localhost:5015/api/getAll")
             .then((res) => {
                 setPlayers(res.data);
                 setLoaded(true);
@@ -23,16 +23,8 @@ const AddScores = () => {
 
     useEffect(handleRequest, []);
 
-    useEffect(() => {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(players);
-        }
-    }, [loaded]);
-
     // ------------- Send new scores to the database -------------
-    const [playerId, setPlayerId] = useState("");
+    const [playerId, setPlayerId] = useState(0);
     const [winLose, setWinLose] = useState(false);
     const [playerScore, setPlayerScore] = useState(0);
     const [spares, setSpares] = useState(0);
@@ -44,14 +36,17 @@ const AddScores = () => {
         // Build object of form data
         const data = {
             id: playerId,
-            winOrLost: winLose,
-            score: playerScore,
-            spares: spares,
-            strikes: strikes,
+            total: parseInt(playerScore),
+            spares: parseInt(spares),
+            strikes: parseInt(strikes),
+            win: winLose === "true" ? true : false,
+            date: new Date(),
         };
 
+        // console.log(`http://localhost:5015/api/add-score/${playerId}`);
+
         axios
-            .put(`http://localhost:5015/scores/update/${data.id}}`, data)
+            .put(`http://localhost:5015/api/add-score/${playerId}`, data)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
     };
@@ -70,10 +65,13 @@ const AddScores = () => {
                             <option value="DEFAULT" disabled hidden>
                                 Select a player
                             </option>
-                            <option value="1">Nick Cave</option>
-                            <option value="2">Rich Parnell</option>
-                            <option value="3">Blake Meadows</option>
-                            <option value="4">Lottie Levick</option>
+                            {players.map((player) => {
+                                return (
+                                    <option key={player._id} value={player._id}>
+                                        {player.playerName}
+                                    </option>
+                                );
+                            })}
                         </select>
                     </div>
                 </fieldset>
@@ -87,8 +85,8 @@ const AddScores = () => {
                             <option value="DEFAULT" disabled hidden>
                                 Select an answer
                             </option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
                         </select>
                     </div>
                 </fieldset>
