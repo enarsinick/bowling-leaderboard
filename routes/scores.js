@@ -22,9 +22,10 @@ router.get("/:id", (req, res, next) => {
 
 // Update player scores in the database
 router.put("/add-score/:id", (req, res, next) => {
+    // console.log(req.params.id);
     Player.findByIdAndUpdate(
         req.params.id,
-        { $push: { scores: req.body.scores } },
+        { $push: { scores: req.body } },
         (err, result) => {
             if (err) {
                 res.status(500).send(err);
