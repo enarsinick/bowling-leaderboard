@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import HomepageHeader from "../HomepageHeader";
+import Loader from "../Loader";
 import StatsPanel from "../StatsPanel";
 import StatsEyebrow from "../StatsEyebrow";
 import { ReactComponent as PersonIcon } from "../../img/person-icon.svg";
@@ -22,6 +23,7 @@ const LeaderboardPage = () => {
             .catch((err) => {
                 setLoaded(true);
                 setError(err);
+                console.log(error);
             });
     };
 
@@ -50,11 +52,19 @@ const LeaderboardPage = () => {
 
             <div className="stats">
                 <StatsEyebrow />
-                {scores.map((scores, i) => {
-                    return (
-                        <StatsPanel key={i} position={i + 1} data={scores} />
-                    );
-                })}
+                {loaded ? (
+                    scores.map((scores, i) => {
+                        return (
+                            <StatsPanel
+                                key={i}
+                                position={i + 1}
+                                data={scores}
+                            />
+                        );
+                    })
+                ) : (
+                    <Loader />
+                )}
             </div>
         </main>
     );

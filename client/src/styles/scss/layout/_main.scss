@@ -1,5 +1,6 @@
 main {
     margin: 50px $mobile-padding;
+    position: relative;
     min-height: calc(
         100vh - (67px + 64px + 100px)
     ); // Nav, footer, and margin height
