@@ -65,7 +65,9 @@ const StatsPanel = ({ position, data }) => {
     }, []);
 
     useEffect(() => {
-        total === 0 ? setAverage(0) : setAverage(total / data.scores.length);
+        total === 0
+            ? setAverage(0)
+            : setAverage(Math.round((total / data.scores.length) * 100) / 100);
     }, [total]);
 
     return (
