@@ -1,5 +1,6 @@
 import PageHeader from "../PageHeader";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const AddScores = () => {
@@ -29,6 +30,7 @@ const AddScores = () => {
     const [playerScore, setPlayerScore] = useState(0);
     const [spares, setSpares] = useState(0);
     const [strikes, setStrikes] = useState(0);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -47,7 +49,7 @@ const AddScores = () => {
 
         axios
             .put(`http://localhost:5015/api/add-score/${playerId}`, data)
-            .then((res) => console.log(res))
+            .then((res) => navigate("/"))
             .catch((err) => console.log(err));
     };
 
